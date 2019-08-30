@@ -8,6 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled, { ThemeProvider } from 'styled-components'
+import theme from '../../theme'
 
 import Header from "./header"
 import "./layout.css"
@@ -34,7 +36,9 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
+        <ThemeProvider theme={theme}>
+          <main>{children}</main>
+        </ThemeProvider>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
