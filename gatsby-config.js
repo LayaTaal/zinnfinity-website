@@ -28,6 +28,14 @@ module.exports = {
       },
     },
     'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Playfair Display', 'Montserrat:400,700,900']
+        }
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

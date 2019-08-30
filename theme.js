@@ -15,7 +15,11 @@ export default {
     heading: 'Playfair Display, serif',
     body: 'Montserrat, sans-serif',
     baseSize: '1.6rem'
+  },
+  breakpoints: {
+    small: '800px',
+    medium: '1000px',
+    large: '1200px'
   }
-  // Breakpoints
   // Spacing
 }
