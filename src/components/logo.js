@@ -18,7 +18,7 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "zinnfinity_logo.png" }) {
         childImageSharp {
-          fixed(width: 300) {
+          fixed(width: 260) {
             ...GatsbyImageSharpFixed
           }
         }

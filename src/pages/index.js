@@ -1,16 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
-import styled from 'styled-components'
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ServicesSection from '../components/Services'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <ServicesSection title='Set your business apart with an unique online experience' subtitle='What I Do' />
   </Layout>
 )
 
