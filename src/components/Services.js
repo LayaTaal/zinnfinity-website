@@ -15,14 +15,17 @@ class Services extends React.Component {
       activeService: 'websites',
     }
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleMouseEvent = this.handleMouseEvent.bind(this);
   }
 
-  handleClick(event) {
+  handleMouseEvent(event) {
+    const serviceKeys = Object.keys(service_data); 
+    const { activeService } = this.state;
     const name = event.target.getAttribute('name');
+    const isValid = serviceKeys.includes(name);
 
     this.setState({
-      activeService: name,
+      activeService: isValid ? name : activeService,
     })
   }
 
@@ -30,7 +33,6 @@ class Services extends React.Component {
     const { title, subtitle } = this.props;
     const { activeService } = this.state;
     const serviceKeys = Object.keys(service_data);
-    console.log(service_data[activeService])
 
     return (
       <SectionContainer padding='2rem' containerType='fixed-width'>
@@ -44,7 +46,7 @@ class Services extends React.Component {
                   key={index}
                   name={service}
                   className={isActive ? 'active service-box' : 'service-box'}
-                  handler={this.handleClick}
+                  handler={this.handleMouseEvent}
                   title={service_data[service].title}
                   excerpt={service_data[service].excerpt}
                   description={service_data[service].description}

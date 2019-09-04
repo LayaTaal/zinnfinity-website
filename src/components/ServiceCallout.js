@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 function ServiceCallout (props) {
   const { title, description, bullets, className } = props;
-  console.log(props);
   return (
     <CalloutBox className={className}>
       <h4 className='service-title'>

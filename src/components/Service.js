@@ -6,9 +6,8 @@ import Divider from './Divider';
 
 function Service (props) {
   const { name, title, excerpt, description, bullets, className, handler } = props;
-  console.log(handler);
   return (
-    <ServiceContainer className={className} name={name} onClick={handler}>
+    <ServiceContainer className={className} name={name} onMouseEnter={handler}>
       <h3 className='service-title'>
         <TiArrowRightThick className='service-title__icon' />
         {title}
