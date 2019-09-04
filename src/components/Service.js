@@ -41,9 +41,10 @@ Service.propTypes = {
 }
 
 const ServiceContainer = styled.div`
-  box-shadow: 0px 2px 18px ${props => props.theme.colors.grayLightest};
+  box-shadow: 0px 4px 12px ${props => props.theme.colors.grayLighter};
   border-radius: 5px;
   padding: 2rem;
+  margin: 2rem 0;
 
   .service-title {
     letter-spacing: 2px;
@@ -72,13 +73,14 @@ const ServiceContainer = styled.div`
   @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
     cursor: pointer;
     padding: 2rem 3rem;
+    margin: 0;
     transition: 0.3s box-shadow ease-in-out;
 
     &:not(.active) {
       box-shadow: none;
 
       :hover {
-        box-shadow: 0px 2px 18px ${props => props.theme.colors.grayLightest};        
+        box-shadow: 0px 4px 12px ${props => props.theme.colors.grayLighter};        
       }
     }
 

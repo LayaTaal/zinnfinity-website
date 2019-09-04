@@ -88,8 +88,8 @@ const FlexBox = styled.div`
 
   @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
     .services-overview {
-      width: calc(65% - 4rem);
-      margin-right: 4rem;
+      width: calc(65% - 8rem);
+      margin-right: 8rem;
     }
     
     .service-callout-box {
