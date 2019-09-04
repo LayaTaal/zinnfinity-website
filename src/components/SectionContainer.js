@@ -2,13 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function SectionContainer (props) {
-  const { padding, containerType } = props;
-  const sectionStyles = {
+  const { styles, containerType } = props;
+  const defaultStyles = {
     maxWidth: (containerType === 'fixed-width') ? '1200px' : '100%',
     width: '100%',  
     margin: '0 auto',
-    padding: padding ? padding : '2rem 0',
+    padding: '2rem 0',
+    background: '#ffffff',
   }
+  const sectionStyles = Object.assign(defaultStyles, styles);
 
   return (
     <div className='section-container' style={sectionStyles}>
@@ -20,6 +22,6 @@ function SectionContainer (props) {
 export default SectionContainer;
 
 SectionContainer.propTypes = {
-  padding: PropTypes.string,
-  containerType: PropTypes.string
+  styles: PropTypes.object,
+  containerType: PropTypes.string,
 }

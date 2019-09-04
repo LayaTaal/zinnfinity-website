@@ -3,13 +3,15 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 function SectionHeading (props) {
-  const { title, subtitle } = props;
+  const { title, subtitle, styles } = props;
   return (
-    <Header>
-      <div className='section-subtitle'>
-        <span>{subtitle}</span>
-      </div>
-      <h2 className='section-title'>{title}</h2>
+    <Header style={styles}>
+      {subtitle && (
+        <div className='section-subtitle'>
+          <span>{subtitle}</span>
+        </div>
+      )}
+      {title && <h2 className='section-title'>{title}</h2>}
     </Header>
   )
 }
@@ -17,6 +19,7 @@ function SectionHeading (props) {
 SectionHeading.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
+  styles: PropTypes.object,
 }
 
 export default SectionHeading;

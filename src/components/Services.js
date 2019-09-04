@@ -35,7 +35,7 @@ class Services extends React.Component {
     const serviceKeys = Object.keys(service_data);
 
     return (
-      <SectionContainer padding='2rem' containerType='fixed-width'>
+      <SectionContainer styles={{padding: '2rem'}} containerType='fixed-width'>
         <FlexBox>
           <div className='services-overview'>
             <SectionHeading title={title} subtitle={subtitle} />
