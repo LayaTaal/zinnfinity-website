@@ -5,9 +5,10 @@ import { TiArrowRightThick } from "react-icons/ti";
 import Divider from './Divider';
 
 function Service (props) {
-  const { title, excerpt, description, bullets } = props;
+  const { name, title, excerpt, description, bullets, className, handler } = props;
+  console.log(handler);
   return (
-    <ServiceContainer>
+    <ServiceContainer className={className} name={name} onClick={handler}>
       <h3 className='service-title'>
         <TiArrowRightThick className='service-title__icon' />
         {title}
@@ -31,20 +32,23 @@ function Service (props) {
 export default Service;
 
 Service.propTypes = {
+  name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   excerpt: PropTypes.string.isRequired,
   description: PropTypes.string,
-  bulletPoint: PropTypes.array,
+  bullets: PropTypes.array,
+  className: PropTypes.string.isRequired,
+  handler: PropTypes.func.isRequired
 }
 
 const ServiceContainer = styled.div`
-  box-shadow: 0px 4px 12px ${props => props.theme.colors.grayLight};
+  box-shadow: 0px 2px 18px ${props => props.theme.colors.grayLightest};
   border-radius: 5px;
   padding: 2rem;
-  margin: 2rem 0;
 
   .service-title {
     letter-spacing: 2px;
+    margin-bottom: 0.5rem;
   }
 
   .service-title__icon {
@@ -67,7 +71,17 @@ const ServiceContainer = styled.div`
   }
 
   @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
+    cursor: pointer;
     padding: 2rem 3rem;
+    transition: 0.3s box-shadow ease-in-out;
+
+    &:not(.active) {
+      box-shadow: none;
+
+      :hover {
+        box-shadow: 0px 2px 18px ${props => props.theme.colors.grayLightest};        
+      }
+    }
 
     .service-title__icon {
       display: inline-block;

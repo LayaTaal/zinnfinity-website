@@ -1,50 +1,68 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import service_data from '../data/Services'
 import SectionHeading from './SectionHeading'
-import SectionContainer from './SectionContainer';
+import SectionContainer from './SectionContainer'
 import Service from './Service'
+import ServiceCallout from './ServiceCallout'
 
-function Services (props) {
-  const { title, subtitle } = props;
-  return (
-    <SectionContainer padding='2rem'>
-      <ServicesOverview>
-        <SectionHeading title={title} subtitle={subtitle} />
-        <Service
-          title='Business Websites'
-          excerpt='Elegantly designed websites for any type of business'
-          description='All businesses are different. That’s why I work with you to tailor your website to the specific needs and goals of your business.'
-          bullets={[
-            "Affordable and reliable",
-            "The platform that’s right for you",
-            "Modern sites that are blazing fast",
-            "1 year no maintenance guarantee'",
-          ]}
-        />
-        <Service
-          title='JavaScript Development'
-          excerpt='Dynamic websites with interactive experiences'
-          description='I help develop solutions to provide dynamic content and amazing interactive experience to your customers and clients.'
-          bullets={[
-            "Bring dynamic data to your users",
-            "Experiences that go beyond",
-            "E-commerce solutions"
-          ]}
-        />
-        <Service
-          title='Data Visualization'
-          excerpt='Show off your business with interactive charts and graphs'
-          description='Libraries like d3, and charts.js help bring your data to life with amazing charts and graphs customized to your business.'
-          bullets={[
-            "Bring dynamic data to your users",
-            "Experiences that go beyond",
-            "E-commerce solutions"
-          ]}
-        />
-      </ServicesOverview>
-    </SectionContainer>
-  )
+class Services extends React.Component {
+  constructor (props) {
+    super (props)
+
+    this.state = {
+      activeService: 'websites',
+    }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    const name = event.target.getAttribute('name');
+
+    this.setState({
+      activeService: name,
+    })
+  }
+
+  render () {
+    const { title, subtitle } = this.props;
+    const { activeService } = this.state;
+    const serviceKeys = Object.keys(service_data);
+    console.log(service_data[activeService])
+
+    return (
+      <SectionContainer padding='2rem' containerType='fixed-width'>
+        <FlexBox>
+          <div className='services-overview'>
+            <SectionHeading title={title} subtitle={subtitle} />
+            {serviceKeys.map((service, index) => {
+              const isActive = service === activeService;
+              return (
+                <Service
+                  key={index}
+                  name={service}
+                  className={isActive ? 'active service-box' : 'service-box'}
+                  handler={this.handleClick}
+                  title={service_data[service].title}
+                  excerpt={service_data[service].excerpt}
+                  description={service_data[service].description}
+                  bullets={service_data[service].bullets}
+                />
+              )
+            })}
+          </div>
+          <ServiceCallout
+            className='service-callout-box'
+            title={service_data[activeService].title}
+            description={service_data[activeService].description}
+            bullets={service_data[activeService].bullets}
+          />
+        </FlexBox>
+      </SectionContainer>
+    )
+  }
 }
 
 export default Services;
@@ -54,6 +72,27 @@ Services.propTypes = {
   subtitle: PropTypes.string,
 }
 
-const ServicesOverview = styled.div`
+const FlexBox = styled.div`
+  display: flex;
+  flex-flow: row wrap;
 
+  .services-overview {
+    width: 100%;
+  }
+
+  .service-callout-box {
+    display: none;
+  }
+
+  @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
+    .services-overview {
+      width: calc(65% - 4rem);
+      margin-right: 4rem;
+    }
+    
+    .service-callout-box {
+      display: block;
+      width: 35%;
+    }    
+  }
 `;
