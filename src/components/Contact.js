@@ -34,6 +34,7 @@ const Contact  = (props) => (
               <BackgroundImage
                 Tag="section"
                 fluid={imageData}
+                className="form-wrapper"
                 backgroundColor={`#112b2f`}
               >
                 <form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
@@ -76,7 +77,6 @@ const FlexBox = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   margin: 0 auto;
 
@@ -89,7 +89,9 @@ const ContactInformation = styled.div`
   width: 100%;
 
   @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
-    width: 50%
+    width: 50%;
+    padding-top: 2rem;
+    padding-right: 4rem;
   }
 `;
 
@@ -124,6 +126,11 @@ const ContactForm = styled.div`
   }
 
   @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
-    width: 50%
+    width: 50%;
+
+    .form-wrapper {
+      box-shadow: 0px 4px 12px ${props => props.theme.colors.grayLighter};
+      border-radius: 5px;
+    }
   }
 `
