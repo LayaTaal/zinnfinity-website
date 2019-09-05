@@ -2,11 +2,11 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
 import SectionHeading from './SectionHeading'
 import SectionContainer from './SectionContainer'
-import BackgroundImage from 'gatsby-background-image'
 
-const Contact  = (props) => (
+const Contact = props => (
   <StaticQuery
     query={graphql`
       query {
@@ -20,24 +20,41 @@ const Contact  = (props) => (
       }
     `}
     render={data => {
-      const { title, subtitle } = props;
+      const { title, subtitle } = props
       // Set ImageData.
       const imageData = data.desktop.childImageSharp.fluid
       return (
-        <SectionContainer styles={{padding: '2rem'}} containerType='fixed-width'>
+        <SectionContainer
+          id="contact"
+          styles={{ padding: '2rem' }}
+          containerType="fixed-width"
+        >
           <FlexBox>
             <ContactInformation>
-              <SectionHeading title={title} subtitle={subtitle} styles={{marginBottom: '0'}} />
-              <p>I love meeting new teams and individuals. If you think I might be a good fit, drop me a link and let’s start a conversation.</p>
+              <SectionHeading
+                title={title}
+                subtitle={subtitle}
+                styles={{ marginBottom: '0' }}
+              />
+              <p>
+                I love meeting new teams and individuals. If you think I might
+                be a good fit, drop me a link and let’s start a conversation.
+              </p>
             </ContactInformation>
             <ContactForm>
               <BackgroundImage
                 Tag="section"
                 fluid={imageData}
                 className="form-wrapper"
-                backgroundColor={`#112b2f`}
+                backgroundColor="#112b2f"
               >
-                <form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
+                <form
+                  name="contact"
+                  method="post"
+                  action="/success"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                >
                   <input type="hidden" name="bot-field" />
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="field">
@@ -53,7 +70,11 @@ const Contact  = (props) => (
                     <textarea name="message" id="message" rows="6" />
                   </div>
                   <div className="field">
-                    <input type="submit" value="Send Message" className="special" />
+                    <input
+                      type="submit"
+                      value="Send Message"
+                      className="special"
+                    />
                   </div>
                 </form>
               </BackgroundImage>
@@ -63,14 +84,13 @@ const Contact  = (props) => (
       )
     }}
   />
-  
 )
 
-export default Contact;
+export default Contact
 
 Contact.propTypes = {
   title: PropTypes.string,
-  subtitle: PropTypes.string
+  subtitle: PropTypes.string,
 }
 
 const FlexBox = styled.div`
@@ -83,7 +103,7 @@ const FlexBox = styled.div`
   @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
     flex-flow: row wrap;
   }
-`;
+`
 
 const ContactInformation = styled.div`
   width: 100%;
@@ -93,7 +113,7 @@ const ContactInformation = styled.div`
     padding-top: 2rem;
     padding-right: 4rem;
   }
-`;
+`
 
 const ContactForm = styled.div`
   width: 100%;
@@ -106,7 +126,7 @@ const ContactForm = styled.div`
       width: 100%;
       margin: 1rem 0;
     }
-    
+
     label {
       display: block;
       font-size: ${props => props.theme.typography.fontSize__small};

@@ -1,13 +1,13 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
-import Logo from "../components/logo"
+import Logo from './Logo'
 
 const Header = ({ siteTitle }) => (
   <React.Fragment>
     <HeaderWrap>
-      <div className='container'>
+      <div className="container">
         <Navbar>
           <ul>
             <li>
@@ -19,25 +19,25 @@ const Header = ({ siteTitle }) => (
           </ul>
         </Navbar>
         <LogoWrapper>
-          <Logo/>
+          <Logo />
         </LogoWrapper>
         <Description>
-          <h1>
-            Website Design and Development Solutions for your Business
-          </h1>
+          <h1>Website Design and Development Solutions for your Business</h1>
           <p>
-            I’m a web developer passionate about creating unique websites for individuals, organizations, and businesses. 
-            I love getting to know new teams and helping make their vision become a reality.
+            I’m a web developer passionate about creating unique websites for
+            individuals, organizations, and businesses. I love getting to know
+            new teams and helping make their vision become a reality.
           </p>
           <p>
-            I have successfully helped businesses plan and launch everything from marketing websites, 
-            to complex e-commerce storefronts, and dynamic React based webpages.
+            I have successfully helped businesses plan and launch everything
+            from marketing websites, to complex e-commerce storefronts, and
+            dynamic React based webpages.
           </p>
         </Description>
       </div>
     </HeaderWrap>
     <WaveContainer>
-      <div className='wave' />
+      <div className="wave" />
     </WaveContainer>
   </React.Fragment>
 )
@@ -119,7 +119,7 @@ const Description = styled.div`
     padding: 1rem 0;
     max-width: 640px;
     margin-bottom: 0;
-    
+
     @media screen and (max-width: ${props => props.theme.breakpoints.medium}) {
       font-size: 1.5rem;
       max-width: 500px;
@@ -127,7 +127,7 @@ const Description = styled.div`
       text-align: center;
     }
   }
-  
+
   p {
     width: 50%;
 
@@ -168,7 +168,7 @@ const WaveContainer = styled.div`
   }
 
   .wave:before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     border-radius: 100%;
@@ -176,11 +176,11 @@ const WaveContainer = styled.div`
     height: 300px;
     background-color: white;
     right: -25%;
-    top: 20px
+    top: 20px;
   }
 
   .wave:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     border-radius: 100%;

@@ -1,34 +1,36 @@
 import React from 'react'
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { TiArrowRightThick } from "react-icons/ti";
-import Divider from './Divider';
+import { TiArrowRightThick } from 'react-icons/ti';
+import Divider from './Divider'
 
-function Service (props) {
-  const { name, title, excerpt, description, bullets, className, handler } = props;
+function Service(props) {
+  const {
+    name,
+    title,
+    excerpt,
+    description,
+    bullets,
+    className,
+    handler,
+  } = props
   return (
     <ServiceContainer className={className} name={name} onMouseEnter={handler}>
-      <h3 className='service-title'>
-        <TiArrowRightThick className='service-title__icon' />
+      <h3 className="service-title">
+        <TiArrowRightThick className="service-title__icon" />
         {title}
       </h3>
-      <p className='service-excerpt'>
-        {excerpt}
-      </p>
-      <Divider marginBottom='1.5rem' showDesktop={false} />
-      <p className='service-description'>
-      {description}
-      </p>
-      <ul className='service-bullets'>
-        {bullets.map((bulletPoint, index) => {
-          return <li key={index}>{bulletPoint}</li>
-        })}
+      <p className="service-excerpt">{excerpt}</p>
+      <Divider marginBottom="1.5rem" showDesktop={false} />
+      <p className="service-description">{description}</p>
+      <ul className="service-bullets">
+        {bullets.map((bulletPoint, index) => <li key={index}>{bulletPoint}</li>)}
       </ul>
     </ServiceContainer>
   )
 }
 
-export default Service;
+export default Service
 
 Service.propTypes = {
   name: PropTypes.string.isRequired,
@@ -37,7 +39,7 @@ Service.propTypes = {
   description: PropTypes.string,
   bullets: PropTypes.array,
   className: PropTypes.string.isRequired,
-  handler: PropTypes.func.isRequired
+  handler: PropTypes.func.isRequired,
 }
 
 const ServiceContainer = styled.div`
@@ -80,14 +82,15 @@ const ServiceContainer = styled.div`
       box-shadow: none;
 
       :hover {
-        box-shadow: 0px 4px 12px ${props => props.theme.colors.grayLighter};        
+        box-shadow: 0px 4px 12px ${props => props.theme.colors.grayLighter};
       }
     }
 
     .service-title__icon {
       display: inline-block;
     }
-    .service-description, .service-bullets {
+    .service-description,
+    .service-bullets {
       display: none;
     }
 
@@ -95,4 +98,4 @@ const ServiceContainer = styled.div`
       margin-bottom: 0;
     }
   }
-`;
+`

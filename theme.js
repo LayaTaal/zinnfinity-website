@@ -10,7 +10,7 @@ export default {
     grayLight: '#cccccc',
     gray: '#999999',
     grayDark: '#666666',
-    grayDarkest: '#333333'
+    grayDarkest: '#333333',
   },
   typography: {
     heading: 'Playfair Display, serif',
@@ -19,12 +19,12 @@ export default {
     fontSize__small: '0.75rem',
     fontWeight__regular: '400',
     fontWeight__bold: '700',
-    fontWeight__black: '900'
+    fontWeight__black: '900',
   },
   breakpoints: {
     small: '800px',
     medium: '1000px',
-    large: '1200px'
-  }
+    large: '1200px',
+  },
   // Spacing
 }
