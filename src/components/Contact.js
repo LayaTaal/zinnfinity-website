@@ -39,11 +39,11 @@ const Contact  = (props) => (
                 <form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
                   <input type="hidden" name="bot-field" />
                   <input type="hidden" name="form-name" value="contact" />
-                  <div className="field half first">
+                  <div className="field">
                     <label htmlFor="name">Your Name</label>
                     <input type="text" name="name" id="name" />
                   </div>
-                  <div className="field half">
+                  <div className="field">
                     <label htmlFor="email">Email</label>
                     <input type="text" name="email" id="email" />
                   </div>
@@ -51,11 +51,9 @@ const Contact  = (props) => (
                     <label htmlFor="message">What can I help you with?</label>
                     <textarea name="message" id="message" rows="6" />
                   </div>
-                  <ul className="actions">
-                    <li>
-                      <input type="submit" value="Send Message" className="special" />
-                    </li>
-                  </ul>
+                  <div className="field">
+                    <input type="submit" value="Send Message" className="special" />
+                  </div>
                 </form>
               </BackgroundImage>
             </ContactForm>
@@ -97,6 +95,33 @@ const ContactInformation = styled.div`
 
 const ContactForm = styled.div`
   width: 100%;
+  color: ${props => props.theme.colors.white};
+
+  form {
+    padding: 2rem;
+
+    .field {
+      width: 100%;
+      margin: 1rem 0;
+    }
+    
+    label {
+      display: block;
+      font-size: ${props => props.theme.typography.fontSize__small};
+      font-weight: ${props => props.theme.typography.fontWeight__bold};
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border-radius: 2px;
+      border: none;
+      padding: 0.5rem;
+      font-size: ${props => props.theme.typography.fontSize__small};
+    }
+  }
 
   @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
     width: 50%

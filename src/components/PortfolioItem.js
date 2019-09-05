@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import PortfolioImage from './PorfolioImage'
 
 function PortfolioItem (props) {
   const { itemData } = props;
-  const { name, imageURL, altText, siteURL } = itemData;
+  const { name, imageURL, siteURL } = itemData;
 
   return (
     <div 
