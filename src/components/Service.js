@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { TiArrowRightThick } from 'react-icons/ti';
+import { TiArrowRightThick } from 'react-icons/ti'
 import Divider from './Divider'
 
 function Service(props) {
@@ -21,10 +21,12 @@ function Service(props) {
         {title}
       </h3>
       <p className="service-excerpt">{excerpt}</p>
-      <Divider marginBottom="1.5rem" showDesktop={false} />
+      <Divider customStyles={{ margin: '0 0 1.5rem 0' }} showDesktop={false} />
       <p className="service-description">{description}</p>
       <ul className="service-bullets">
-        {bullets.map((bulletPoint, index) => <li key={index}>{bulletPoint}</li>)}
+        {bullets.map((bulletPoint, index) => (
+          <li key={index}>{bulletPoint}</li>
+        ))}
       </ul>
     </ServiceContainer>
   )

@@ -84,7 +84,7 @@ const Navbar = styled.nav`
 
     li {
       display: inline-block;
-      margin-right: 2rem;
+      margin: 0 1rem;
     }
   }
 
@@ -97,17 +97,24 @@ const Navbar = styled.nav`
   @media screen and (min-width: ${props => props.theme.breakpoints.medium}) {
     grid-column: 2/2;
     text-align: left;
+
+    li {
+      margin-right: 2rem;
+    }
   }
 `
 
 const LogoWrapper = styled.div`
   text-align: center;
   padding: 2rem 0;
+  width: 260px;
+  margin: 0 auto;
 
   @media screen and (min-width: ${props => props.theme.breakpoints.medium}) {
     grid-column: 1/2;
     text-align: left;
     padding: 0;
+    margin: 0;
   }
 `
 

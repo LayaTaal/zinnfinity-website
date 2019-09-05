@@ -15,7 +15,7 @@ export default {
   typography: {
     heading: 'Playfair Display, serif',
     body: 'Montserrat, sans-serif',
-    baseSize: '1.6rem',
+    baseSize: '1rem',
     fontSize__small: '0.75rem',
     fontWeight__regular: '400',
     fontWeight__bold: '700',
