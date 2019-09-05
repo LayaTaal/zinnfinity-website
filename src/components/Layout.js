@@ -7,39 +7,31 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider } from 'styled-components'
 import theme from '../../theme'
 import './layout.css'
 import Header from './Header'
 import Footer from './Footer'
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout = props => {
+  const { pageTitle, children, isHomepage } = props
   return (
-    <>
+    <React.Fragment>
       <ThemeProvider theme={theme}>
         <div className="wrapper">
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header isHomepage={isHomepage || false} pageTitle={pageTitle} />
           <main>{children}</main>
           <Footer />
         </div>
       </ThemeProvider>
-    </>
+    </React.Fragment>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  pageTitle: PropTypes.string,
+  isHomepage: PropTypes.bool,
 }
 
 export default Layout

@@ -4,46 +4,55 @@ import React from 'react'
 import styled from 'styled-components'
 import Logo from './Logo'
 
-const Header = ({ siteTitle }) => (
-  <React.Fragment>
-    <HeaderWrap>
-      <div className="container">
-        <Navbar>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/page-2/">Page 2</Link>
-            </li>
-          </ul>
-        </Navbar>
-        <LogoWrapper>
-          <Logo />
-        </LogoWrapper>
-        <Description>
-          <h1>Website Design and Development Solutions for your Business</h1>
-          <p>
-            I’m a web developer passionate about creating unique websites for
-            individuals, organizations, and businesses. I love getting to know
-            new teams and helping make their vision become a reality.
-          </p>
-          <p>
-            I have successfully helped businesses plan and launch everything
-            from marketing websites, to complex e-commerce storefronts, and
-            dynamic React based webpages.
-          </p>
-        </Description>
-      </div>
-    </HeaderWrap>
-    <WaveContainer>
-      <div className="wave" />
-    </WaveContainer>
-  </React.Fragment>
-)
+function Header(props) {
+  const { isHomepage, pageTitle } = props
+  return (
+    <React.Fragment>
+      <HeaderWrap>
+        <div className="container">
+          <Navbar>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/blog/">Blog</Link>
+              </li>
+            </ul>
+          </Navbar>
+          <LogoWrapper>
+            <Logo />
+          </LogoWrapper>
+          <Description>
+            <h1>{pageTitle}</h1>
+            {isHomepage && (
+              <React.Fragment>
+                <p>
+                  I’m a web developer passionate about creating unique websites
+                  for individuals, organizations, and businesses. I love getting
+                  to know new teams and helping make their vision become a
+                  reality.
+                </p>
+                <p>
+                  I have successfully helped businesses plan and launch
+                  everything from marketing websites, to complex e-commerce
+                  storefronts, and dynamic React based webpages.
+                </p>
+              </React.Fragment>
+            )}
+          </Description>
+        </div>
+      </HeaderWrap>
+      <WaveContainer>
+        <div className="wave" />
+      </WaveContainer>
+    </React.Fragment>
+  )
+}
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  isHomepage: PropTypes.bool,
+  pageTitle: PropTypes.string,
 }
 
 Header.defaultProps = {

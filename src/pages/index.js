@@ -6,8 +6,11 @@ import PortfolioSection from '../components/Portfolio'
 import ContactSection from '../components/Contact'
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
+  <Layout
+    isHomepage
+    pageTitle="Website Design and Development Solutions for your Business"
+  >
+    <SEO title="Website design and development in Houston, TX | Zinnfinity Web Services" />
     <ServicesSection
       title="Set your business apart with an unique online experience"
       subtitle="What I Do"
