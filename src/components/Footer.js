@@ -12,7 +12,7 @@ function Footer() {
           <Logo />
         </div>
         <div className="footer-col">
-          <Link to="/index" activeClassName="active-page">
+          <Link to="/" activeClassName="active-page">
             Home
           </Link>
         </div>

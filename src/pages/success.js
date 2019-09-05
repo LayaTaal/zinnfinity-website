@@ -1,8 +1,8 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import Layout from '../components/layout';
+import React from 'react'
+import Helmet from 'react-helmet'
+import Layout from '../components/Layout'
 
-const Success = props => (
+const Success = () => (
   <Layout>
     <Helmet>
       <title>Success Page</title>
@@ -20,6 +20,6 @@ const Success = props => (
       </section>
     </div>
   </Layout>
-);
+)
 
-export default Success;
+export default Success
