@@ -70,11 +70,10 @@ const FooterContainer = styled.div`
   }
 
   @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
-    padding: 2rem 2rem;
+    padding: 2rem;
 
     .copyright {
       text-align: right;
-      padding-right: 4rem;
     }
   }
 `
@@ -82,10 +81,9 @@ const FooterContainer = styled.div`
 const FlexBox = styled.div`
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: ${props => props.theme.breakpoints.large};
   margin: 0 auto;
 
   .first-col {
@@ -132,9 +130,6 @@ const FlexBox = styled.div`
   }
 
   @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
-    justify-content: space-between;
-    padding: 0 2rem;
-
     .first-col {
       width: 200;
     }
