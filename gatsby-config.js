@@ -15,6 +15,14 @@ module.exports = {
     },
     `gatsby-background-image`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/posts`,
+        name: `markdown-pages`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -33,9 +41,9 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Playfair Display', 'Montserrat:400,700,900']
-        }
-      }
+          families: ['Playfair Display', 'Montserrat:400,700,900'],
+        },
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

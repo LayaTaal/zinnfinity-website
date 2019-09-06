@@ -13,7 +13,7 @@ const Layout = props => {
       <ThemeProvider theme={theme}>
         <div className="wrapper">
           <Header />
-          <main>{children}</main>
+          <Main>{children}</Main>
           <Footer />
         </div>
       </ThemeProvider>
@@ -26,3 +26,14 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+const Main = styled.main`
+  max-width: ${props => props.theme.breakpoints.medium};
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem 2rem;
+
+  @media screen and (min-width: ${props => props.theme.breakpoints.medium}) {
+    padding: 4rem 0;
+    margin: 0 2rem;
+  }
+`

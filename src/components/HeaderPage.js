@@ -47,6 +47,7 @@ export default Header
 const HeaderWrap = styled.div`
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
   padding: 2rem;
   background: ${props => props.theme.colors.black};
   width: 100%;
@@ -54,6 +55,7 @@ const HeaderWrap = styled.div`
 
   @media screen and (min-width: ${props => props.theme.breakpoints.medium}) {
     height: 110px;
+    justify-content: center;
   }
 
   .header-logo {
