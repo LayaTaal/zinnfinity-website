@@ -9,20 +9,22 @@ const Blog = ({ data }) => {
   console.log(data)
   return (
     <Layout>
-      <SEO title="Interesting tidbits and findings in web development | Zinnfinity Web Services" />
+      <SEO title="Blog about web development related topics | Zinnfinity Web Services" />
       <h1>Zinnfinity Blog</h1>
       <Primary>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <header className="blog-feed-header">
               <h2 className="blog-feed-header__title">
-                {node.frontmatter.title}
+                <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
               </h2>
               <span className="blog-feed-header__date">
                 {node.frontmatter.date}
               </span>
             </header>
-            <p>{node.excerpt}</p>
+            <p>
+              <Link to={node.frontmatter.path}>{node.excerpt}</Link>
+            </p>
           </div>
         ))}
       </Primary>
@@ -58,6 +60,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            path
           }
           excerpt
         }

@@ -5,10 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
+import favicon32 from '../images/zinnfinity_icon_32x32.png'
+import favicon16 from '../images/zinnfinity_icon_16x16.png'
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -68,6 +70,20 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      link={[
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '16x16',
+          href: `${favicon16}`,
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '32x32',
+          href: `${favicon32}`,
+        },
+      ]}
     />
   )
 }

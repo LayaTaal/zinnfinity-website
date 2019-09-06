@@ -1,6 +1,7 @@
 ---
 title: "Introducing Zinnfinity"
 date: "2019-09-06"
+path: "/posts/introducing-zinnfinity"
 ---
 
 As the world has grown and changed, a customer’s first introduction to a business has morphed to take advantage of new forms of communication. Today, the web is often a customer’s first introduction to a business, which makes it all the more important that businesses and organizations have compelling websites that immediately sell their brand.
@@ -36,5 +37,5 @@ I will also continue to stay on top of the latest trends and needs for websites 
 
 I look forward to the unknown challenges of the year ahead, and to building lasting relationships that bring success to my clients and to Zinnfinity. 
 
-**Jason Zinn**
-**Founder, Zinnfinity Web Services**
+*_Jason Zinn_*<br>
+*_Founder, Zinnfinity Web Services_*

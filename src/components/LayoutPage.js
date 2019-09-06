@@ -28,12 +28,23 @@ Layout.propTypes = {
 export default Layout
 
 const Main = styled.main`
-  max-width: ${props => props.theme.breakpoints.medium};
+  min-height: calc(100vh - 400px);
+  max-width: ${props => props.theme.breakpoints.small};
   margin: 0 auto;
   padding: 6rem 2rem 4rem 2rem;
 
+  h2 {
+    a {
+      color: ${props => props.theme.colors.green};
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.colors.black};
+  }
+
   @media screen and (min-width: ${props => props.theme.breakpoints.medium}) {
-    padding: 4rem 0;
-    margin: 0 2rem;
+    padding: 6rem 0;
   }
 `

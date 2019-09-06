@@ -89,7 +89,7 @@ const HeaderWrap = styled.div`
     }
 
     @media screen and (min-width: ${props => props.theme.breakpoints.medium}) {
-      padding: 2rem 4rem;
+      padding: 2rem 4rem 2rem 3rem;
 
       .social-icon-container {
         .social-icon {

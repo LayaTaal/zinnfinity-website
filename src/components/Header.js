@@ -109,6 +109,10 @@ const Navbar = styled.nav`
 
     li {
       margin-right: 2rem;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
     }
   }
 `
