@@ -2,11 +2,11 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components'
-import SEO from './seo'
+import SEO from '../components/seo'
 import theme from '../../theme'
-import './layout.css'
-import Header from './HeaderPage'
-import Footer from './Footer'
+import '../components/layout.css'
+import Header from '../components/HeaderPage'
+import Footer from '../components/Footer'
 
 const Layout = ({ data }) => {
   console.log(data)
