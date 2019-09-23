@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://zinnfinity.com`,
     title: `Zinnfinity Web Services`,
-    description: `WordPress websites for businesses and organizations, JavaScript solutions featuring React, and data visualization techniques for presenting complex data on the web.`,
+    description: `Advanced website design and development solutions for businesses in and around Houston, TX. WordPress nad CMS based websites. Providing interactive solutions using React, JavaScript, and Data Visualizations using Charts.js and d3.`,
     author: `@taal25`,
   },
   plugins: [

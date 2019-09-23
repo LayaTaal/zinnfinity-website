@@ -10,7 +10,10 @@ const IndexPage = () => (
     isHomepage
     pageTitle="Website Design and Development Solutions for your Business"
   >
-    <SEO title="Website Design and Development in Houston, TX" />
+    <SEO
+      title="Website Design and Development in Houston, TX"
+      description="Advanced website design and development solutions for businesses in and around Houston, TX. WordPress nad CMS based websites. Providing interactive solutions using React, JavaScript, and Data Visualizations using Charts.js and d3."
+    />
     <ServicesSection
       title="Set your business apart with an unique online experience"
       subtitle="What I Do"
