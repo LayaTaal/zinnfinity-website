@@ -10,7 +10,7 @@ const IndexPage = () => (
     isHomepage
     pageTitle="Website Design and Development Solutions for your Business"
   >
-    <SEO title="Website design and development in Houston, TX | Zinnfinity Web Services" />
+    <SEO title="Website Design and Development in Houston, TX" />
     <ServicesSection
       title="Set your business apart with an unique online experience"
       subtitle="What I Do"
