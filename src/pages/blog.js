@@ -9,7 +9,10 @@ const Blog = ({ data }) => {
   console.log(data)
   return (
     <Layout>
-      <SEO title="Blog about web development related topics | Zinnfinity Web Services" />
+      <SEO
+        title="Blog about web development related topics | Zinnfinity Web Services"
+        description="A blog on website design and development with tips and guides for businesses, organizations, and individuals interested in building quality websites."
+      />
       <h1>Zinnfinity Blog</h1>
       <Primary>
         {data.allMarkdownRemark.edges.map(({ node }) => (
