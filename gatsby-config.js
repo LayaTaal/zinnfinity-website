@@ -1,11 +1,13 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://zinnfinity.com`,
     title: `Web Design and Development in Houston, TX | Zinnfinity Web Services`,
     description: `WordPress websites for businesses and organizations, JavaScript solutions featuring React, and data visualization techniques for presenting complex data on the web.`,
     author: `@taal25`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
