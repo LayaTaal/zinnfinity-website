@@ -18,6 +18,9 @@ function Header(props) {
               <li>
                 <Link to="/blog/">Blog</Link>
               </li>
+              <li>
+                <Link to="/#contact">Contact</Link>
+              </li>
             </ul>
           </Navbar>
           <LogoWrapper>
