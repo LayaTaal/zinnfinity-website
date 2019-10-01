@@ -11,12 +11,21 @@ date: 2019-10-01T16:39:58.095Z
 4. Test admin page is working
 5. Configure Identity settings on Netlify/Github
 
-
 ## Gotchas
-- Error Message when trying to login:
-  - What it means: You need to invite the email (from Netlify)
+
+* Error Message when trying to login:
+  * What it means: You need to invite the email (from Netlify)
 
 ## Useful Tidbits
-- Editorial Workflow
-- Changing CMS index path
-- Setting requirement in collection fields
+
+* Editorial Workflow
+* Changing CMS index path
+  * ```
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+      modulePath: `${__dirname}/static/admin/index.js`,
+      },
+    },
+    ```
+* Setting requirement in collection fields
