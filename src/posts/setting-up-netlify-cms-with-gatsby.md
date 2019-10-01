@@ -19,3 +19,4 @@ date: 2019-10-01T16:39:58.095Z
 ## Useful Tidbits
 - Editorial Workflow
 - Changing CMS index path
+- Setting requirement in collection fields
