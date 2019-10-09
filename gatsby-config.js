@@ -38,20 +38,20 @@ module.exports = {
         icon: `src/images/zinnfinity_icon_32x32.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-styled-components',
+    `gatsby-plugin-styled-components`,
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ['Playfair Display', 'Montserrat:400,700,900'],
+          families: [`Playfair Display`, `Montserrat:400,700,900`],
         },
       },
     },
-    'gatsby-plugin-netlify-cms',
+    `gatsby-plugin-netlify-cms`,
     {
-      resolve: 'gatsby-plugin-google-tagmanager',
+      resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: 'GTM-P4CX93J',
+        id: `GTM-P4CX93J`,
 
         // Include GTM in development.
         // Defaults to false meaning GTM will only be loaded in production.
@@ -60,7 +60,7 @@ module.exports = {
         // datalayer to be set before GTM is loaded
         // should be an object or a function that is executed in the browser
         // Defaults to null
-        defaultDataLayer: { platform: 'gatsby' },
+        defaultDataLayer: { platform: `gatsby` },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
