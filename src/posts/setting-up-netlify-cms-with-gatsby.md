@@ -1,7 +1,7 @@
 ---
-layout: blog
 title: Setting Up Netlify CMS with Gatsby
 date: 2019-10-09T21:57:17.821Z
+path: /posts/setting-up-netlify-cms-with-gatsby
 ---
 This site is built ousing Gatsby and deployed via Netlify. I recently setup my website to utilize Netlify's CMS to handle writing new blog posts (like this one). Netlify has a really [great guide](https://www.netlifycms.org/docs/gatsby/) for how to do this, but since there were a few areas that were either unclear or slightly different in my case, I wanted to ahead and write my procedure down in case anyone hits similar hurdles.
 
