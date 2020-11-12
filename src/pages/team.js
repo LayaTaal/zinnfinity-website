@@ -1,18 +1,19 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import Layout from "../components/LayoutPage"
-import SEO from "../components/seo"
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import Layout from '../components/LayoutPage'
+import SEO from '../components/seo'
 
 const Blog = ({ data }) => {
+  console.log(data)
   return (
     <Layout>
       <SEO
-        title="Blog Covering Web Design and Development"
-        description="A blog on website design and development with tips and guides for businesses, organizations, and individuals interested in building quality websites."
+        title="Teammates and Fellows"
+        description="A collection of talented individuals working to produce beautiful and accessible websites for everyone."
       />
-      <h1>Zinnfinity Blog</h1>
+      <h1>Team</h1>
       <Primary>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
@@ -20,9 +21,6 @@ const Blog = ({ data }) => {
               <h2 className="blog-feed-header__title">
                 <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
               </h2>
-              <span className="blog-feed-header__date">
-                {node.frontmatter.date}
-              </span>
             </header>
             <p>
               <Link to={node.frontmatter.path}>{node.excerpt}</Link>
@@ -60,7 +58,7 @@ export const query = graphql`
         order: DESC
       }, 
       filter: {
-        frontmatter: {tag: {eq: "blog"}}
+        frontmatter: {tag: {eq: "team"}}
       }
       ) {
       totalCount
@@ -69,7 +67,6 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
             path
           }
           excerpt

@@ -1,4 +1,5 @@
 ---
+tag: "blog"
 title: "Introducing Zinnfinity"
 date: "2019-09-06"
 path: "/posts/introducing-zinnfinity"

@@ -20,6 +20,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               date
               path
               title
+              tag
             }
           }
         }

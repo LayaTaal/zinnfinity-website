@@ -24,6 +24,13 @@ module.exports = {
         name: `markdown-pages`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/team`,
+        name: `markdown-pages`,
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     {
