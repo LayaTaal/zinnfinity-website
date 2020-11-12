@@ -6,7 +6,6 @@ import Layout from '../components/LayoutPage'
 import SEO from '../components/seo'
 
 const Blog = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <SEO

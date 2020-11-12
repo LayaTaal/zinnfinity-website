@@ -143,6 +143,15 @@ const ContactForm = styled.div`
       padding: 0.5rem;
       font-size: ${props => props.theme.typography.fontSize__small};
     }
+
+    input[type="submit"] {
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background:  ${props => props.theme.colors.green};
+      }
+    }
   }
 
   @media screen and (min-width: ${props => props.theme.breakpoints.small}) {
