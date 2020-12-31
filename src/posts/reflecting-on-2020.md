@@ -1,7 +1,7 @@
 ---
 title: Reflecting on 2020
 date: '2020-12-31'
-path: reflecting-on-2020
+path: /posts/reflecting-on-2020
 ---
 I came across [this post](https://twitter.com/lara_hogan/status/1343260278381633536) from @lara_hogan recently on Twitter and decided to reflect on how things went for Zinnfinity in 2020.
 
